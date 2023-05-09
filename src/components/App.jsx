@@ -54,7 +54,8 @@ deleteContact = contactId => {
 componentDidMount() {
   const contactsLocalStorage = localStorage.getItem('contacts')
   const parsedContacts = JSON.parse(contactsLocalStorage)
-  this.setState({contacts: parsedContacts})
+  if (parsedContacts){
+  this.setState({contacts: parsedContacts})}
 }
 
 componentDidUpdate(prevState, prevProps) {
